@@ -8,17 +8,28 @@
 </head>
 <body>
     <script>
-
+        const gameComponents = ["rock", "paper", "scissor"];
+        
         function computerPlay(){
-
+            return gameComponents[Math.floor(Math.random() * gameComponents.length)];
         }
 
-        function playerSelection(){
-
+        function playRound(playerSelection, computerSelection){
+            computerSelection = computerPlay();
+            playerSelection = playerSelection;
+             if (computerSelection === playerSelection){
+                 console.log("Game tie!")
+             }
+             else {console.log("Not tie!")}
         }
+        
 
-        function computerSelection(){
-            
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        //console.log(playRound(playerSelection, computerSelection));
+
+        function game(){
+            return playRound(playerSelection, computerSelection);
         }
 
     </script>
