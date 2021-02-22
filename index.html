@@ -18,18 +18,28 @@
             computerSelection = computerPlay();
             playerSelection = playerSelection;
              if (computerSelection === playerSelection){
-                 console.log("Game tie!")
+                 console.log("Game tie. Play again!");
              }
-             else {console.log("Not tie!")}
+             else if(computerSelection === 'rock' && playerSelection === 'paper'){
+                console.log(`Player won! ${playerSelection} covers ${computerSelection}`);
+             }
+             else if(computerSelection === "paper" && playerSelection === 'scissor'){
+                console.log(`Player won! ${playerSelection} cuts ${computerSelection}`);
+             }
+             else if (computerSelection === 'scissor' && playerSelection === 'rock'){
+                console.log(`Player won! ${playerSelection} crushes ${computerSelection}`);
+             }
+             else {console.log(`Computer won! ${computerSelection} beats ${playerSelection}`)}
         }
         
 
-        const playerSelection = "rock";
+        let playerSelection;
         const computerSelection = computerPlay();
         //console.log(playRound(playerSelection, computerSelection));
 
         function game(){
-            return playRound(playerSelection, computerSelection);
+                playerSelection = prompt("Enter your choice!");
+                playRound(playerSelection, computerSelection);
         }
 
     </script>
